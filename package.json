@@ -4,7 +4,7 @@
   "description": "A simple express html pass-thru view",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/ahmed-masud/ehp/issues"
   },
-  "homepage": "https://github.com/ahmed-masud/ehp#readme"
+  "homepage": "https://github.com/ahmed-masud/ehp#readme",
+  "dependencies" : {
+  },
+  "devDependencies": {
+	"mocha": "^2.2.5"
+   },
+
+  "engines" : {
+	"node" : ">=0.10.0"
+  }
 }
