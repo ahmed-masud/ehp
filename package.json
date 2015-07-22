@@ -4,7 +4,7 @@
   "description": "A simple express html pass-thru view",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "passthru",
     "passthrough"
   ],
-  "author": "Ahmed Masud",
+  "author": "Ahmed Masud <ahmed.masud@trustifier.com> (https://trustifier.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ahmed-masud/ehp/issues"
