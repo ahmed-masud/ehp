@@ -17,7 +17,7 @@ exports.renderFile = function(path, cb) {
 	var result;
 	var cacheLocation = path + ':cache';
 	if(typeof module.exports.cache[cacheLocation] === "string") {
-		if ( cb ) {
+		if ( typeof(cb) === 'function' ) {
 			return cb(null, module.exports.cache[cacheLocation]);
 		}
 		else return data;
@@ -26,10 +26,10 @@ exports.renderFile = function(path, cb) {
 		if(err) {
 			return(cb(err));
 		}
-		if ( cb ) {
+		if ( typeof (cb) === 'function') {
 			return cb(null, module.exports.cache[cacheLocation] = data);
 		}
-		lese
+		else
 			return data;
 	});
 }
