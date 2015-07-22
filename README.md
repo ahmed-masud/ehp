@@ -10,10 +10,18 @@ and express insists on jade or ejs
 	
 	* in-memory caching of static pages
 
-# Usage
+## Usage
 
 ```javascript
 
 	app.engine('html', require('ehp'));
 	app.set('view engine', 'html');
 ```
+
+## Licensing
+
+Licensed under MIT 
+
+---
+
+Copyright (C) 2015 Ahmed Masud <ahmed.masud@trustifier.com> 
