@@ -17,13 +17,20 @@ exports.renderFile = function(path, cb) {
 	var result;
 	var cacheLocation = path + ':cache';
 	if(typeof module.exports.cache[cacheLocation] === "string") {
-		return cb(null, module.exports.cache[cacheLocation]);
+		if ( cb ) {
+			return cb(null, module.exports.cache[cacheLocation]);
+		}
+		else return data;
 	}
 	fs.readFile(path, 'utf8', function(err, data) {
 		if(err) {
 			return(cb(err));
 		}
-		return cb(null, module.exports.cache[cacheLocation] = data);
+		if ( cb ) {
+			return cb(null, module.exports.cache[cacheLocation] = data);
+		}
+		lese
+			return data;
 	});
 }
 
