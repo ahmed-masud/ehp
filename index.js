@@ -13,25 +13,34 @@ var fs = require('fs')
 exports.cache = {} 
 
 
-exports.renderFile = function(path, cb) {
+exports.renderFile = function() {
+
+	var args = Array.prototype.slice.call(arguments); /* call slice with args */
+	var path = args.shift(),
+		cb = args.pop(),
+		data = args.shift() || {};
+	
 	var result;
+
 	var cacheLocation = path + ':cache';
 	if(typeof module.exports.cache[cacheLocation] === "string") {
 		if ( typeof(cb) === 'function' ) {
-			return cb(null, module.exports.cache[cacheLocation]);
+			result = cb(null, module.exports.cache[cacheLocation]);
 		}
-		else return data;
+		else result = data;
+		return result;
 	}
 	fs.readFile(path, 'utf8', function(err, data) {
 		if(err) {
-			return(cb(err));
+			return (result = cb(err));
 		}
 		if ( typeof (cb) === 'function') {
-			return cb(null, module.exports.cache[cacheLocation] = data);
+			return result = cb(null, module.exports.cache[cacheLocation] = data);
 		}
 		else
-			return data;
+			return result = data;
 	});
+	return result;
 }
 
 

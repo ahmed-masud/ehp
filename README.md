@@ -14,7 +14,7 @@ and express insists on jade or ejs
 
 ```javascript
 
-	app.engine('html', require('ehp'));
+	app.engine('html', require('ehp').renderFile);
 	app.set('view engine', 'html');
 ```
 
